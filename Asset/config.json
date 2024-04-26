@@ -1,0 +1,254 @@
+{
+	"character": {
+		"warrior": {
+			"animation": "res://Asset/pieces/gold.png",
+			"description": "After achieving 'five in a row', increased 2 armor"
+		},
+		"assassin": {
+			"animation": "res://Asset/pieces/black.png",
+			"description": "Crit chance increased by 20%"
+		},
+		"thief": {
+			"animation": "res://Asset/pieces/white.png",
+			"description": "After achieving 'five in a row', randomly eliminate 1 enemy piece."
+		}
+	},
+	"roomtype": {
+		"monster_room": {
+			"weight": 10,
+			"icon": "res://Asset/classical_rooms_icon/monster_room.png"
+		},
+		"elite_monster_room": {
+			"weight": 5,
+			"icon": "res://Asset/classical_rooms_icon/elite_monster_room.png"
+		},
+		"upgrade_room": {
+			"weight": 1,
+			"icon": "res://Asset/classical_rooms_icon/upgrade_room.png"
+		},
+		"maintain_room": {
+			"weight": 3,
+			"icon": "res://Asset/classical_rooms_icon/maintain_room.png"
+		},
+		"chest_room": {
+			"weight": 0,
+			"icon": "res://Asset/classical_rooms_icon/chest_room.png"
+		},
+		"unknown_room": {
+			"weight": 0,
+			"icon": "res://Asset/classical_rooms_icon/unknown_room.png"
+		}
+	},
+	"pieces": {
+		"-1": {
+			"name": "white",
+			"ID": -1,
+			"max_level": 1,
+			"base_value": 1,
+			"lvup_value": 2,
+			"burn_off": 0,
+			"weight":  0,
+			"path": "res://Asset/pieces/white.png",
+			"cn": "攻击力:[x]"
+		},
+		"0": {
+			"name": "",
+			"ID": 0,
+			"max_level": 0,
+			"base_value": 0,
+			"lvup_value": 0,
+			"burn_off": 0,
+			"weight": 0,
+			"path": "",
+			"cn": ""
+		},
+		"1": {
+			"name": "black",
+			"ID": 1,
+			"max_level": 3,
+			"base_value": 1,
+			"lvup_value": 2,
+			"burn_off": 0,
+			"weight": 0,
+			"path": "res://Asset/pieces/black.png",
+			"cn": "伤害+[x]"
+		},
+		"2": {
+			"name": "gold",
+			"ID": 2,
+			"max_level": 2,
+			"base_value": 3,
+			"lvup_value": 2,
+			"burn_off": 0,
+			"weight": 20,
+			"path": "res://Asset/pieces/gold.png",
+			"cn": "伤害+3,获得金币:[x]"
+		},
+		"3": {
+			"name": "posion",
+			"ID": 3,
+			"max_level": 2,
+			"base_value": 2,
+			"lvup_value": 3,
+			"burn_off": 0,
+			"weight": 20,
+			"path": "res://Asset/pieces/poison.png",
+			"cn": "[x]层毒素"
+		},
+		"4": {
+			"name": "posion_double",
+			"ID": 4,
+			"max_level": 2,
+			"base_value": 1,
+			"lvup_value": 1,
+			"burn_off": 0,
+			"weight": 10,
+			"path": "res://Asset/pieces/poison_double.png",
+			"cn": "毒素翻[x]倍,消耗"
+		},
+		"5": {
+			"name": "erase",
+			"ID": 5,
+			"max_level": 2,
+			"base_value": 0,
+			"lvup_value": 1,
+			"burn_off": 1,
+			"weight": 10,
+			"path": "res://Asset/pieces/erase.png",
+			"cn": "随机消除敌方[x]枚棋子"
+		},
+		"6": {
+			"name": "defend",
+			"ID": 6,
+			"max_level": 2,
+			"base_value": 1,
+			"lvup_value": 1,
+			"burn_off": 1,
+			"weight": 10,
+			"path": "res://Asset/pieces/defend.png",
+			"cn": "升级护盾核心+[x]"
+		},
+		"7": {
+			"name": "armor",
+			"ID": 7,
+			"max_level": 2,
+			"base_value": 3,
+			"lvup_value": 2,
+			"weight": 20,
+			"burn_off": 0,
+			"path": "res://Asset/pieces/armor.png",
+			"cn": "护盾+[x]"
+		},
+		"8": {
+			"name": "poison_fog",
+			"ID": 8,
+			"max_level": 1,
+			"base_value": 1,
+			"lvup_value": 0,
+			"burn_off": 1,
+			"weight": 20,
+			"path": "res://Asset/pieces/poison_fog.png",
+			"cn": "毒雾，每回合敌人叠加1层毒雾"
+		}
+	},
+	"treasure": {
+		"1": {
+			"name": "erase",
+			"ID": 1,
+			"path": "res://Asset/treasure/01.png",
+			"weight": 20,
+			"cn": "五子连珠后随机消除一枚敌方棋子"
+		},
+		"2": {
+			"name": "armor",
+			"ID": 2,
+			"weight": 40,
+			"path": "res://Asset/treasure/02.png",
+			"cn": "五子连珠后增加3点护甲"
+		},
+		"3": {
+			"name": "hits",
+			"ID": 3,
+			"weight": 40,
+			"path": "res://Asset/treasure/03.png",
+			"cn": "五子连珠后连击+5"
+		},
+		"4": {
+			"name": "4",
+			"ID": 4,
+			"weight": 50,
+			"path": "res://Asset/treasure/04.png",
+			"cn": "战斗胜利加回复生命值+6"
+		},
+		"5": {
+			"name": "5",
+			"ID": 5,
+			"weight": 40,
+			"path": "res://Asset/treasure/05.png",
+			"cn": "棋子待选区容量+1"
+		},
+		"6": {
+			"name": "6",
+			"ID": 6,
+			"weight": 30,
+			"path": "res://Asset/treasure/06.png",
+			"cn": "升级两枚棋子"
+		},
+		"7": {
+			"name": "7",
+			"ID": 7,
+			"weight": 10,
+			"path": "res://Asset/treasure/07.png",
+			"cn": "损失生命值随机消除一枚敌方棋子"
+		},
+		"8": {
+			"name": "8",
+			"ID": 8,
+			"weight": 40,
+			"path": "res://Asset/treasure/08.png",
+			"cn": "选择奖励可免费刷新一次"
+		},
+		"9": {
+			"name": "9",
+			"ID": 9,
+			"weight": 40,
+			"path": "res://Asset/treasure/09.png",
+			"cn": "五子连珠后消除敌方5层连击增益"
+		},
+		"”10": {
+			"name": "10",
+			"ID": 10,
+			"weight": 40,
+			"path": "res://Asset/treasure/10.png",
+			"cn": "战斗开始时获得10层护甲"
+		},
+		"11": {
+			"name": "11",
+			"ID": 11,
+			"weight": 10,
+			"path": "res://Asset/treasure/11.png",
+			"cn": "五子连珠后额外行动一回合"
+		},
+		"12": {
+			"name": "12",
+			"ID": 12,
+			"weight": 20,
+			"path": "res://Asset/treasure/12.png",
+			"cn": "敌方每次落子损失一点生命值"
+		},
+		"13": {
+			"name": "13",
+			"ID": 13,
+			"weight": 20,
+			"path": "res://Asset/treasure/13.png",
+			"cn": "每次落子对敌人造成一点伤害"
+		},
+		"14": {
+			"name": "14",
+			"ID": 14,
+			"weight": 20,
+			"path": "res://Asset/treasure/14.png",
+			"cn": "五子连珠后随机移动两枚棋盘上的敌方棋子"
+		}
+	}
+}

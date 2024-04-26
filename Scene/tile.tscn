@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bobvohi13eqiq"]
+
+[ext_resource type="Texture2D" uid="uid://cqdg7qdaw2pl8" path="res://Asset/board/tile_48.png" id="1_p5p6t"]
+[ext_resource type="Script" path="res://Script/tile.gd" id="1_trfec"]
+[ext_resource type="AudioStream" uid="uid://brfxkc8roddje" path="res://Voice/piece_capture.mp3" id="3_07mhb"]
+[ext_resource type="AudioStream" uid="uid://qg6hmg47k1mk" path="res://Voice/ding2.wav" id="4_umgdg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dk1t2"]
+size = Vector2(44, 44)
+
+[node name="Tile" type="Area2D"]
+script = ExtResource("1_trfec")
+
+[node name="tile" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_p5p6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dk1t2")
+
+[node name="piece_capture" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_07mhb")
+
+[node name="blink" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_umgdg")
+
+[node name="piece" type="Sprite2D" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

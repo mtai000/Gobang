@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckr00sgppdorx"]
+
+[ext_resource type="Script" path="res://Script/AttackEffect.gd" id="1_ab2ct"]
+[ext_resource type="Texture2D" uid="uid://dnwkc7ut46tdo" path="res://Asset/Effect/Fire Effect and Bullet 16x16.png" id="2_hpx0j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onh1s"]
+radius = 3.0
+height = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nwf81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ontns"]
+atlas = ExtResource("2_hpx0j")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iep0"]
+atlas = ExtResource("2_hpx0j")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvyof"]
+atlas = ExtResource("2_hpx0j")
+region = Rect2(176, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tliia"]
+atlas = ExtResource("2_hpx0j")
+region = Rect2(192, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sme23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ontns")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iep0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvyof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tliia")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 9.0
+}]
+
+[node name="AttackEffect" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ab2ct")
+metadata/_edit_group_ = true
+
+[node name="HitBox" type="Area2D" parent="."]
+position = Vector2(5, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_onh1s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_nwf81")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5, 0)
+sprite_frames = SubResource("SpriteFrames_sme23")
+animation = &"hit"
+frame = 2
+frame_progress = 1.0
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

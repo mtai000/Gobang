@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://djb2wicvyqh5k"]
+
+[ext_resource type="Script" path="res://Script/queue.gd" id="1_dyqmt"]
+[ext_resource type="Texture2D" uid="uid://c6cu2v113fb7x" path="res://Asset/pieces/brown_frame.png" id="2_d4ssu"]
+
+[node name="Queue" type="Node2D"]
+script = ExtResource("1_dyqmt")
+
+[node name="BrownFrame" type="Sprite2D" parent="."]
+position = Vector2(168, 312)
+texture = ExtResource("2_d4ssu")
+
+[node name="queue" type="Node2D" parent="."]
