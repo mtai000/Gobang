@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://ds5fpttwaf2lw"]
+
+[ext_resource type="PackedScene" uid="uid://djb2wicvyqh5k" path="res://Scene/queue.tscn" id="1_djwxv"]
+[ext_resource type="Script" path="res://Script/board.gd" id="1_jrnij"]
+[ext_resource type="Texture2D" uid="uid://dh25r7k30cv42" path="res://Asset/pieces/white_frame.png" id="1_kve36"]
+[ext_resource type="Texture2D" uid="uid://bs0f5brymbj30" path="res://Asset/board/frame.png" id="2_5o434"]
+[ext_resource type="Texture2D" uid="uid://bcvwf647t2xas" path="res://Asset/board/BoardFrame.png" id="3_37nxv"]
+[ext_resource type="PackedScene" uid="uid://c1ngartvg37mx" path="res://Scene/player.tscn" id="6_fl3xd"]
+[ext_resource type="FontFile" uid="uid://bkos0jvoyh5s0" path="res://Fonts/BoutiqueBitmap9x9_1.6.ttf" id="8_a5yfl"]
+[ext_resource type="PackedScene" uid="uid://v7d04uhu01b8" path="res://Scene/Enemy.tscn" id="8_qmj5k"]
+[ext_resource type="PackedScene" uid="uid://cnv483h6q6nmg" path="res://Scene/player_buff.tscn" id="10_dwwjf"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="Frame" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(280, 360)
+texture = ExtResource("2_5o434")
+
+[node name="Board" type="Node2D" parent="."]
+script = ExtResource("1_jrnij")
+
+[node name="BoardFrame" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(920, 360)
+texture = ExtResource("3_37nxv")
+
+[node name="aiSelectFrame" type="Sprite2D" parent="."]
+position = Vector2(608, 48)
+texture = ExtResource("1_kve36")
+
+[node name="piecesSelectArea" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="piecesSelectArea"]
+offset_left = 512.0
+offset_top = 658.0
+offset_right = 560.0
+offset_bottom = 662.0
+color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." instance=ExtResource("6_fl3xd")]
+position = Vector2(96, 120)
+scale = Vector2(4, 4)
+
+[node name="Queue" parent="." instance=ExtResource("1_djwxv")]
+
+[node name="piece_describe" type="RichTextLabel" parent="."]
+offset_left = 264.0
+offset_top = 520.0
+offset_right = 496.0
+offset_bottom = 704.0
+theme_override_fonts/normal_font = ExtResource("8_a5yfl")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="EnemyGroup" type="Node" parent="."]
+
+[node name="Enemy" parent="EnemyGroup" instance=ExtResource("8_qmj5k")]
+position = Vector2(400, 120)
+scale = Vector2(4, 4)
+
+[node name="PlayerBuff" parent="." instance=ExtResource("10_dwwjf")]
+position = Vector2(16, 200)
+
+[node name="EnemyBuff" type="Node2D" parent="."]
+position = Vector2(264, 200)

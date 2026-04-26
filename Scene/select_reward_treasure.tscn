@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxb31e85gcwke"]
+
+[ext_resource type="Script" path="res://Script/select_reward_treasure.gd" id="1_44r6g"]
+[ext_resource type="FontFile" uid="uid://cql3tdxhohtp" path="res://Fonts/BPdots/BPdotsDiamond.otf" id="1_i4hwm"]
+[ext_resource type="FontFile" uid="uid://bkos0jvoyh5s0" path="res://Fonts/BoutiqueBitmap9x9_1.6.ttf" id="3_2c0bb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aasgx"]
+size = Vector2(24, 24)
+
+[node name="SelectRewardTreasure" type="Node2D"]
+script = ExtResource("1_44r6g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 640.0
+mouse_filter = 2
+color = Color(0.0705882, 0.0901961, 0.113725, 0.615686)
+
+[node name="treasure" type="Sprite2D" parent="."]
+position = Vector2(640, 300)
+scale = Vector2(4, 4)
+
+[node name="Area2D" type="Area2D" parent="treasure"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="treasure/Area2D"]
+shape = SubResource("RectangleShape2D_aasgx")
+
+[node name="Skip" type="Button" parent="."]
+offset_left = 936.0
+offset_top = 488.0
+offset_right = 1144.0
+offset_bottom = 584.0
+theme_override_fonts/font = ExtResource("1_i4hwm")
+theme_override_font_sizes/font_size = 30
+text = "Skip"
+
+[node name="describe" type="RichTextLabel" parent="."]
+offset_left = 512.0
+offset_top = 360.0
+offset_right = 768.0
+offset_bottom = 472.0
+theme_override_fonts/normal_font = ExtResource("3_2c0bb")
+theme_override_font_sizes/normal_font_size = 30
+
+[connection signal="input_event" from="treasure/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

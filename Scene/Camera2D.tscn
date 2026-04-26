@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://77hx8f5rympa"]
+
+[ext_resource type="Script" path="res://Script/Camera2D.gd" id="1_ex2tr"]
+[ext_resource type="AudioStream" uid="uid://cekjamcn2sy75" path="res://Ogg/SwitchWithMeTheme_Loopable.wav" id="2_p14l6"]
+
+[node name="camera2d" type="Camera2D"]
+script = ExtResource("1_ex2tr")
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_p14l6")
